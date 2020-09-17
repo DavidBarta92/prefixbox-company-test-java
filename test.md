@@ -2,13 +2,13 @@
 
 ## Short questions
 
-- What is a package? How do you define a package?
-- What is a constructor? When is it executed?
-- How do you implement inheritance in Java?
-- How do you prevent someone to inherit from a class?
-- What is a final variable? Where you can assign value to final variables?
+- What is a package? How do you define a package? We use packages to organize the the files of the application.
+- What is a constructor? When is it executed? The constructor is responsible to "create" an object. It's executed when we instantiate an object.
+- How do you implement inheritance in Java? With abstract classes and interfaces.
+- How do you prevent someone to inherit from a class? 
+- What is a final variable? Where you can assign value to final variables? 
 - Specify the available access modifiers in Java and briefly explain them
-- Briefly explain the mechanism of exception handling
+- Briefly explain the mechanism of exception handling When we want to do something, and we expect that it may be go wrong, we should tell the program what to do when that error happens.
 - What is the difference between an abstract class and an interface?
 - What is the difference between Comparator and Comparable?
 - How Iterable and Iterator interface works? What methods need to exist in a
@@ -35,7 +35,15 @@ Example:
 
 ```java
 public boolean isPalindrom(String input) {
-
+    StringBuilder back = new StringBuilder();
+    boolean palidron =false;
+    for (int i = (input.lenght()-1); i > -1; i--) {
+        back.append(input.get(i));
+    }
+    if (input.equals(back.toString()) == 0){
+        palidron = true;
+    }
+    return palidron;
 }
 
 isPalindrom("alma"); //false
@@ -54,7 +62,16 @@ Example:
 
 ```java
 public String findTheDuplicate(String[] input) {
-
+    String str = "";
+        for (int i = 0; i < input.length() ; i++) {
+            for (int i = 0; i < input.length() ; i++) {
+                if (input.get(i) == input.get(j) {
+                    str = input.get(i);
+                    break;
+                }
+            }
+        }
+        return str;
 }
 
 String[] fruitBasket = new String[] { "apple", "banana", "coconut", "durian",
@@ -158,4 +175,9 @@ WHERE
 ## Web and HTTP
 
 - Specify the existing HTTP request methods and describe their usage!
+POST - it's usualy for creating data on the server, GET - it's used to request data from the server, UPDATE - for updating data on the server, DELETE - for deleting data from the server
 - What are the groups of HTTP response status codes? Write an example for each group!
+200-299 Everithing went fine.
+300-399 Redirecting
+400-499 Something was wrong with the request.
+500-599 Server errors
